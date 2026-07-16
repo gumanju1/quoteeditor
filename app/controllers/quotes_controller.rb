@@ -10,9 +10,13 @@ class QuotesController < ApplicationController
   end
 
   def create
-    @quote = Quote.create(quote_params)
+    @quote = Quote.new(quote_params)
 
-    redirect_to quotes_path
+    if @quote.save
+      redirect_to quotes_path
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def show
@@ -22,9 +26,11 @@ class QuotesController < ApplicationController
   end
 
   def update
-    @quote.update(quote_params)
-
-    redirect_to quotes_path
+    if @quote.update(quote_params)
+      redirect_to quotes_path
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   def destroy
