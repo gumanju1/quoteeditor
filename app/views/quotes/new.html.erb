@@ -1,14 +1,14 @@
-<%= turbo_frame_tag "second_frame" do %>
+<main class="container">
 
-  <h1>New quote</h1>
+  <%= link_to sanitize("&larr; Back to quotes"),
+              quotes_path %>
 
-  <%= simple_form_for @quote do |f| %>
+  <div class="header">
+    <h1>New quote</h1>
+  </div>
 
-    <%= f.input :name %>
-
-    <%= f.submit "Create quote",
-          class: "btn btn--primary" %>
-
-  <% end %>
-
+<%= turbo_frame_tag @quote do %>
+  <%= render "form", quote: @quote %>
 <% end %>
+
+</main>
