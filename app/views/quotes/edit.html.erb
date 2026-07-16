@@ -1,14 +1,10 @@
-<%= turbo_frame_tag "quote_#{@quote.id}" do %>
+<%= turbo_frame_tag @quote do %>
 
   <h1>Edit quote</h1>
 
   <%= simple_form_for @quote do |f| %>
-
     <%= f.input :name %>
-
-    <%= f.submit "Update quote",
-          class: "btn btn--primary" %>
-
+    <%= f.submit "Update quote" %>
   <% end %>
 
 <% end %>
