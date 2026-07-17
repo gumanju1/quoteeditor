@@ -24,11 +24,12 @@
   </head>
 
   <body>
-  <%= render "layouts/navbar" %>
+    <%= render "layouts/navbar" %>
 
-  <div class="flash">
-    <%= render "layouts/flash" %>
-  </div>
+    <div class="flash" id="flash">
+      <%= render "layouts/flash" %>
+    </div>
 
-  <%= yield %>
-</body>
+    <%= yield %>
+  </body>
+</html>
