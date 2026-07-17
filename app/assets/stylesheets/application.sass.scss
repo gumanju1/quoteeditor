@@ -1,6 +1,3 @@
-// Entry point for your Sass build
-// app/assets/stylesheets/application.sass.scss
-
 // Mixins
 @import "mixins/media";
 
@@ -15,6 +12,7 @@
 @import "components/visually_hidden";
 @import "components/quote";
 @import "components/navbar";
+@import "components/flash";
 
 // Layouts
 @import "layouts/container";
