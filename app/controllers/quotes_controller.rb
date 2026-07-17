@@ -57,4 +57,8 @@ class QuotesController < ApplicationController
   def quote_params
     params.require(:quote).permit(:name)
   end
+  
+  def show
+    @line_item_dates = @quote.line_item_dates.ordered
+  end
 end
