@@ -10,7 +10,7 @@ class QuotesController < ApplicationController
   end
   
   def create
-    @quote = Quote.new(quote_params)
+    @quote = current_user.company.quotes.new(quote_params)
 
     if @quote.save
       respond_to do |format|
