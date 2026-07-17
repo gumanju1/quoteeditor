@@ -9,7 +9,6 @@ class LineItemDatesTest < ApplicationSystemTestCase
 
     @quote          = quotes(:first)
     @line_item_date = line_item_dates(:today)
-
     visit quote_path(@quote)
   end
 
