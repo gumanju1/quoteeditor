@@ -8,7 +8,7 @@ class QuotesController < ApplicationController
   def new
     @quote = Quote.new
   end
-  
+
   def create
     @quote = current_user.company.quotes.new(quote_params)
 
@@ -23,6 +23,7 @@ class QuotesController < ApplicationController
   end
 
   def show
+    @line_item_dates = @quote.line_item_dates.includes(:line_items).ordered
   end
 
   def edit
@@ -56,10 +57,5 @@ class QuotesController < ApplicationController
 
   def quote_params
     params.require(:quote).permit(:name)
-  end
-  
-  def show
-    def show
-  @line_item_dates = @quote.line_item_dates.includes(:line_items).ordered
   end
 end
