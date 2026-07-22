@@ -4,7 +4,7 @@ source "https://rubygems.org"
 gem "rails", "~> 8.1.3"
 
 # Authentication
-gem "devise", "~> 4.9"
+gem "devise", "~> 5.0"
 
 # The modern asset pipeline for Rails
 gem "propshaft"
