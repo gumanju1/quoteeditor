@@ -59,6 +59,7 @@ class QuotesController < ApplicationController
   end
   
   def show
-    @line_item_dates = @quote.line_item_dates.ordered
+    def show
+  @line_item_dates = @quote.line_item_dates.includes(:line_items).ordered
   end
 end
