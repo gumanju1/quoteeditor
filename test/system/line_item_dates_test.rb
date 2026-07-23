@@ -1,6 +1,3 @@
-# test/system/line_item_dates_test.rb
-# System Tests (Optional Code)
-
 require "application_system_test_case"
 
 class LineItemDatesTest < ApplicationSystemTestCase
@@ -27,7 +24,7 @@ class LineItemDatesTest < ApplicationSystemTestCase
   test "Updating a line item date" do
     assert_selector "h1", text: "First quote"
 
-    within id: dom_id(@line_item_date) do
+    within id: dom_id(@line_item_date, :edit) do
       click_on "Edit"
     end
 
@@ -43,7 +40,7 @@ class LineItemDatesTest < ApplicationSystemTestCase
     assert_text I18n.l(Date.current, format: :long)
 
     accept_confirm do
-      within id: dom_id(@line_item_date) do
+      within id: dom_id(@line_item_date, :edit) do
         click_on "Delete"
       end
     end
